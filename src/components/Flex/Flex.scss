@@ -1,0 +1,122 @@
+.flexDiv {
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.row {
+    flex-direction: row;
+}
+.row-reverse {
+    flex-direction: row-reverse;
+}
+.column {
+    flex-direction: column;
+}
+.column-reverse {
+    flex-direction: column-reverse;
+}
+.nowrap {
+    flex-wrap: nowrap;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+.wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+.justify-flex-start {
+    justify-content: flex-start;
+}
+.justify-flex-end {
+    justify-content: flex-end;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-space-between {
+    justify-content: space-between;
+}
+.justify-space-around {
+    justify-content: space-around;
+}
+.justify-space-evenly {
+    justify-content: space-evenly;
+}
+.justify-start {
+    justify-content: start;
+}
+.justify-end {
+    justify-content: end;
+}
+.justify-left {
+    justify-content: left;
+}
+.justify-right {
+    justify-content: right;
+}
+.align-stretch {
+    align-items: stretch;
+}
+.align-flex-start {
+    align-items: flex-start;
+}
+.align-flex-end {
+    align-items: flex-end;
+}
+.align-center {
+    align-items: center;
+}
+.align-baseline {
+    align-items: baseline;
+}
+.full-col {
+    width:100%;
+    max-width: 100%;
+}
+.col-1 {
+    width:8.33%;
+}
+.col-2 {
+    width: 16.66%;
+}
+.col-3 {
+    width: 25%;
+}
+.col-4 {
+    width: 33.32%;
+}
+.col-5 {
+    width: 41.65%;
+}
+.col-6 {
+    width: 49.98%;
+}
+.col-7 {
+    width: 58.31%;
+}
+.col-8 {
+    width: 66.64%;
+}
+.col-9 {
+    width: 74.97%;
+}
+.col-10 {
+    width: 83.3%;
+}
+.col-11 {
+    width: 91.63%;
+}
+
+@media only screen and (min-width:200px) and (max-width: 639px) {
+    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11 {
+        width:100%;
+        flex: 0 0 100%;
+        padding: 10px 0px;
+    }
+}
+
+@media only screen and (min-width:640px) and (max-width: 979px) {
+    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11 {
+        width:50%;
+    }
+}

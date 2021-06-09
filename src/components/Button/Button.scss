@@ -1,0 +1,22 @@
+button {
+    padding:10px 30px;
+    border:0px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    &:hover, &:focus {
+        opacity: .8;
+    }
+}
+.primary {
+    background-color: darkblue;
+    color: #fff;
+}
+.success {
+    background-color: forestgreen;
+    color:#fff;
+}
+.danger {
+    background-color: red;
+    color: #fff;
+}

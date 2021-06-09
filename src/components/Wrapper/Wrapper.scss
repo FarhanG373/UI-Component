@@ -1,0 +1,25 @@
+.fixWrap {
+    max-width: 1240px;
+    width: 100%;
+    padding: 0px 20px;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0 auto;
+ &:after {
+     clear: both;
+     content: "";
+     display: block;
+ }   
+}
+.fluidWrap {
+    width: 100%;
+    padding: 0px 20px;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0 auto;
+ &:after {
+     clear: both;
+     content: "";
+     display: block;
+ }   
+}
