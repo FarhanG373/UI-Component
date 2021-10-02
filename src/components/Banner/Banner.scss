@@ -1,0 +1,74 @@
+.banner {
+    position: relative;
+    &.oneTherd {
+        img {
+            height:33.33vh;
+            width:100%;
+            object-fit: cover;
+        }
+    }
+    &.half {
+        img {
+            height:50vh;
+            width:100%;
+            object-fit: cover;
+        }
+    }
+    &.full {
+        img {
+            height:calc(100vh - 60px);
+            width:100%;
+            object-fit: cover;
+        }
+    }
+    &.parallex {
+        img {
+            background-attachment: fixed;
+        }
+    }
+    &.lightOverlay {
+        &:after {
+            content:'';
+            display: block;
+            width:100%;
+            height:100%;
+            position: absolute;
+            left:0px;
+            top:0px;
+            background-color: rgba(0,0,0,.4);
+        }
+    }
+    &.darkOverlay {
+        &:after {
+            content:'';
+            display: block;
+            width:100%;
+            height:100%;
+            position: absolute;
+            left:0px;
+            top:0px;
+            background-color: rgba(0,0,0,.6);
+        }
+    }
+    &.darkerOverlay {
+        &:after {
+            content:'';
+            display: block;
+            width:100%;
+            height:100%;
+            position: absolute;
+            left:0px;
+            top:0px;
+            background-color: rgba(0,0,0,.8);
+        }
+    }
+    .bannerChildren {
+        position: absolute;
+        top:50%;
+        left:50%;
+        z-index: 99;
+        transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+    }
+}

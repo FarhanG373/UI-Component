@@ -1,0 +1,63 @@
+$darkNav: #212121;
+$lightFont: #fff;
+$lightNav: #e7e7e7;
+$darkFont: #212121;
+$darkHoverFont: rgba(255,255,255,.6);
+$lightHoverFont: rgba(0,0,0,.6);
+.NavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+    padding:0px 20px;
+    box-sizing: border-box;
+    input, .NavLabel {
+        display: none;
+    }
+    .logo {
+        width: 100px;
+    }
+    &.dark {
+        background-color:$darkNav;
+        a {
+            color:$lightFont;
+            &:hover, &:focus {
+              color:$darkHoverFont;
+            }
+        }
+    }
+    &.light {
+        background-color:$lightNav;
+        a {
+            color:$darkFont;
+            &:hover, &:focus {
+              color:$lightHoverFont;
+            }
+        }
+    }
+    &.fixed {
+        position: fixed;
+        top:0px;
+        left:0px;
+        width:100%;
+        z-index:9999;
+    }
+    ul {
+        margin:0px;
+        padding: 0px;
+        list-style: none;
+        li {
+            margin-right:50px;
+            &:last-child {
+                margin-right:0px;
+            }
+            a {
+                text-decoration: none;
+                text-transform: capitalize;
+                font-size: 16px;
+                font-weight: bold;
+                
+            }
+        }
+    }
+}
