@@ -3,7 +3,7 @@ import Heading from '../Heading/Heading';
 import Para from '../Paragraph/Paragraph';
 import './Card.scss';
 export type size = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-
+export type view = 'list' | 'grid';
 export interface Props {
   cardHeading?: any;
   CardHeadingType?: size;
@@ -14,6 +14,8 @@ export interface Props {
   CardBodyId?: any;
   CardImagePath?: any;
   CardImageAlt?: any;
+  children?: any;
+  CardView?: view;
 }
 
 export const Card = ({
@@ -26,14 +28,17 @@ export const Card = ({
   CardHeadingType="h2",
   CardImagePath,
   CardImageAlt,
-
-  
+  children,
+  CardView = "grid"
 }: Props) => {
   return (
-    <div className="card">
-      <img src={CardImagePath} alt={CardImageAlt}/>
+    <div className={`card ${CardView}`}>
+      <img src={CardImagePath} alt={CardImageAlt} />
+      <div className='cBody'>
       <Heading Type={CardHeadingType} HeadingClass={CardHeadingClass} HeadingId={CardHeadingId}>{cardHeading}</Heading>
-      <Para ParaClass={CardBodyClass} ParaId={CardBodyId}>{ cardBody }</Para>
+      <Para ParaClass={CardBodyClass} ParaId={CardBodyId}>{cardBody}</Para>
+        {children}
+        </div>
     </div>
   )
 }

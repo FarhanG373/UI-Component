@@ -4,7 +4,33 @@
     border-radius: 10px;
     width: 100%;
     overflow: hidden;
-}
-img {
-    width: 100%;
+    .cBody {
+        padding:10px;
+    }
+    img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        margin: 10px auto;
+        display: block;
+    }
+    a {
+        text-decoration: none;
+        border: 1px solid #0a8ce9;
+        color: #0a8ce9;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: .2rem;
+        padding: 10px 30px 7px;
+        display: inline-block;
+        text-transform: uppercase;
+        margin-top: 20px;
+        border-radius: 30px;
+        line-height: 16px;
+        &:hover {
+            border: 1px solid #0a8ce9;
+        color: #000;
+        background-color: #0a8ce9;
+        }
+    }
 }

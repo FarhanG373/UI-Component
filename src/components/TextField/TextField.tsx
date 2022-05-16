@@ -12,7 +12,8 @@ export interface Props {
   value?: any,
   name?: any,
   PlaceHolder?: any,
-  LabelName?:any,
+  LabelName?: any
+  SubType?: any
 }
 
 function TextField({
@@ -22,14 +23,15 @@ function TextField({
   value,
   name,
   PlaceHolder,
-  LabelName
+  LabelName,
+  SubType
 }:Props) {
   return (
     <>
       {LabelName &&
         <Label Labelfor={TextFieldId}>{LabelName}</Label>
       }
-      <Element className={TextFieldClass} id={TextFieldId} name={name} value={value} placeholder={PlaceHolder} />
+      <Element type={SubType} className={TextFieldClass} id={TextFieldId} name={name} value={value} placeholder={PlaceHolder} onChange={(e)=>e.target.value}/>
       </>
   )
 }

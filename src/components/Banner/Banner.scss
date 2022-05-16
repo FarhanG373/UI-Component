@@ -39,6 +39,7 @@
         }
     }
     &.darkOverlay {
+        color:#fff;
         &:after {
             content:'';
             display: block;
@@ -51,6 +52,7 @@
         }
     }
     &.darkerOverlay {
+        color:#fff;
         &:after {
             content:'';
             display: block;
