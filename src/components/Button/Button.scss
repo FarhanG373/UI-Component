@@ -4,6 +4,7 @@ button {
     border-radius: 8px;
     font-size: 14px;
     cursor: pointer;
+    font-family: inherit;
     &:hover, &:focus {
         opacity: .8;
     }
@@ -19,4 +20,11 @@ button {
 .danger {
     background-color: red;
     color: #fff;
+}
+.plain {
+    background:none;
+    padding:0px;
+    &:hover {
+        text-decoration: underline;
+    }
 }

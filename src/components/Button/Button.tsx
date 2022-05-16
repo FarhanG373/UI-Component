@@ -1,6 +1,6 @@
 import React from 'react';
 import './Button.scss';
-export type color = 'primary' | 'secondary' | 'success' | 'danger' | 'ButCustomClass'
+export type color = 'primary' | 'secondary' | 'success' | 'danger' | 'ButCustomClass' | 'plain'
 
 export interface Props {
   ButtonClass?:color;

@@ -35,7 +35,7 @@ export const Card = ({
     <div className={`card ${CardView}`}>
       <img src={CardImagePath} alt={CardImageAlt} />
       <div className='cBody'>
-      <Heading Type={CardHeadingType} HeadingClass={CardHeadingClass} HeadingId={CardHeadingId}>{cardHeading}</Heading>
+      <Heading Type={CardHeadingType} HeadingClass={`cardHeading ${CardHeadingClass ? CardHeadingClass : ''}`} HeadingId={CardHeadingId}>{cardHeading}</Heading>
       <Para ParaClass={CardBodyClass} ParaId={CardBodyId}>{cardBody}</Para>
         {children}
         </div>
