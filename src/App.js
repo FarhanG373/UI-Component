@@ -7,9 +7,12 @@ import Label from './components/Label/Label';
 import NavBar from './components/NavBar/NavBar';
 import TextField from './components/TextField/TextField';
 import Wrapper from './components/Wrapper/Wrapper';
-import { BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Select from './components/Select/Select';
 import SelectOptions from './components/Select/SelectOptions';
+import Dropdown from './components/Dropdown/Dropdown';
+import List from './components/List/List';
+import ListItem from './components/List/ListItem';
 
 function App() {
   const options = [
@@ -52,20 +55,38 @@ function App() {
               cardBody="The list-style-type property applies to all lists, and to any element that is set to display: list-item.The color of the list marker will be whatever the computed color of the element is (set via the color property)."
               CardImagePath="https://neilpatel.com/wp-content/uploads/2017/09/image-editing-tools.jpg" CardImageAlt="im" />
           </Flex>
-          <TextField Type="textarea" PlaceHolder="Type your message" LabelName='Text area'></TextField>
-          <TextField Type="input" PlaceHolder="Enter the name"></TextField>
-          <Label>222</Label>
-          <Select>
-            {
-              options.map((item) => {
-                return (
-                  <SelectOptions optionLabel={item.label} optionValue={item.value} />
-                )
-              })
-            }
-          </Select>
+          <Flex FlexWidth="full-col">
+            <TextField Type="textarea" PlaceHolder="Type your message" LabelName='Text area'></TextField>
+          </Flex>
+          <Flex FlexWidth="full-col">
+            <TextField Type="input" PlaceHolder="Enter the name"></TextField>
+          </Flex>
+          <Flex FlexWidth="full-col">
+            <Label>222</Label>
+          </Flex>
+          <Flex FlexWidth="full-col">
 
-
+            <Select>
+              {
+                options.map((item) => {
+                  return (
+                    <SelectOptions optionLabel={item.label} optionValue={item.value} />
+                  )
+                })
+              }
+            </Select>
+          </Flex>
+          <Flex FlexWidth="full-col">
+            <Dropdown dropdownBtnName={'Dropdown'}>
+              <List ListStyleType='none' Type='ul'> 
+                <ListItem>123</ListItem>
+                <ListItem>123</ListItem>
+                <ListItem>123</ListItem>
+                <ListItem>123</ListItem>
+                <ListItem>123</ListItem>
+              </List>
+            </Dropdown>
+          </Flex>
         </Wrapper></Router>
     </div>
   );

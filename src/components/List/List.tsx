@@ -19,7 +19,7 @@ const List = ({
   ListStyleType = "none"
 }:Props) => {
   return (
-    <Element className={TypeClass + ListStyleType} id={TypeId}>
+    <Element className={TypeClass + " " + ListStyleType} id={TypeId}>
       {children}
     </Element>
   )

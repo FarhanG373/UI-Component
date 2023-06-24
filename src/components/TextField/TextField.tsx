@@ -13,7 +13,10 @@ export interface Props {
   name?: any,
   PlaceHolder?: any,
   LabelName?: any
-  SubType?: any
+  SubType?: any,
+  onClick?: any,
+  onBlur?: any,
+  onFocus?:any,
 }
 
 function TextField({
@@ -24,14 +27,17 @@ function TextField({
   name,
   PlaceHolder,
   LabelName,
-  SubType
+  SubType,
+  onClick,
+  onBlur,
+  onFocus
 }:Props) {
   return (
     <>
       {LabelName &&
         <Label Labelfor={TextFieldId}>{LabelName}</Label>
       }
-      <Element type={SubType} className={TextFieldClass} id={TextFieldId} name={name} value={value} placeholder={PlaceHolder} onChange={(e)=>e.target.value}/>
+      <Element onClick={onClick} onBlur={onBlur} onFocus={onFocus} type={SubType} className={TextFieldClass} id={TextFieldId} name={name} value={value} placeholder={PlaceHolder} onChange={(e)=>e.target.value}/>
       </>
   )
 }
