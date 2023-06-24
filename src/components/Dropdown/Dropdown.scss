@@ -1,48 +1,51 @@
-.drop_down{
+.drop_down {
     button {
-        border:1px solid #e7e7e7;
+        border: 1px solid #e7e7e7;
         background-color: transparent;
         padding: .5rem 1rem;
         padding-right: 1.5rem;
         cursor: pointer;
         position: relative;
+
         &.dropOpen {
             &:after {
                 content: '';
-                width:5px;
+                width: 5px;
                 height: 5px;
-                border-right:2px solid #000;
+                border-right: 2px solid #000;
                 border-bottom: 2px solid #000;
                 display: block;
                 position: absolute;
-                right:10px;
-                top:14px;
+                right: 10px;
+                top: 14px;
                 transform: rotate(-133deg);
                 -moz-transform: rotate(-133deg);
                 -webkit-transform: rotate(-133deg);
             }
         }
+
         &.dropClose {
-        &:after {
-            content: '';
-            width:5px;
-            height: 5px;
-            border-right:2px solid #000;
-            border-bottom: 2px solid #000;
-            display: block;
-            position: absolute;
-            right:10px;
-            top:10px;
-            transform: rotate(45deg);
-            -moz-transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
+            &:after {
+                content: '';
+                width: 5px;
+                height: 5px;
+                border-right: 2px solid #000;
+                border-bottom: 2px solid #000;
+                display: block;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+            }
         }
     }
-    }
+
     .drop_container {
         border: 1px solid #e7e7e7;
         box-sizing: border-box;
         padding: 1rem;
-        margin-top:.5rem;
+        margin-top: .5rem;
     }
 }
