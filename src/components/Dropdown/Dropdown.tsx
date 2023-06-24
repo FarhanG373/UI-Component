@@ -23,7 +23,7 @@ const Dropdown = ({
   const [fClick, setFclick] = useState(false);
   return (
     <div className='drop_down'>
-      <button className={`dropdownBtn ${fieldClass}`} id={fieldId} onBlur={fieldBlur} onFocus={filedFocus} onClick={()=>setFclick(!fClick)}>{ dropdownBtnName}</button>
+      <button className={`dropdownBtn ${fieldClass} ${fClick ? 'dropOpen' : 'dropClose'}`} id={fieldId} onBlur={fieldBlur} onFocus={filedFocus} onClick={()=>setFclick(!fClick)}>{ dropdownBtnName}</button>
       {
         fClick && 
         <div className={`drop_container ${dropdownClass ? dropdownClass : ''}`}>
