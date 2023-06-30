@@ -16,7 +16,7 @@ const Button = ({
   onClick
 }: Props) => {
   return (
-    <button className={`btn ${ButtonClass}`} id={ButtonId} onClick={onClick}>
+    <button className={`btn${ButtonClass ? (" " + ButtonClass): ''}`} id={ButtonId} onClick={onClick}>
       {children}
     </button>
   )

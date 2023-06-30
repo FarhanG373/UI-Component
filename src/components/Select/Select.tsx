@@ -13,7 +13,7 @@ const Select = ({
   children
 }:Props) => {
   return (
-    <select className={`select ${selectClass}`} id={selectId} value={selectValue} onChange={(e) => e.target.value}>
+    <select className={`select${selectClass?(' ' + selectClass) :''}`} id={selectId} value={selectValue} onChange={(e) => e.target.value}>
       {children}
     </select>
   )

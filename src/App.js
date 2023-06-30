@@ -13,6 +13,7 @@ import SelectOptions from './components/Select/SelectOptions';
 import Dropdown from './components/Dropdown/Dropdown';
 import List from './components/List/List';
 import ListItem from './components/List/ListItem';
+import FlexWrap from './components/FlexWrap/FlexWrap';
 
 function App() {
   const options = [
@@ -26,7 +27,7 @@ function App() {
         <NavBar Logo={logo} navBarColor="dark" />
         <Banner bannerImage="https://images.pexels.com/photos/3794748/pexels-photo-3794748.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" bannerSize="full" bannerOverlay="lightOverlay" />
         <Wrapper wrapClass="fixWrap">
-
+        <FlexWrap FlexWrap='wrap'>
           <Flex FlexJustify="justify-right" FlexAlign="align-flex-start" FlexWidth="col-3" >
             <Card
               cardHeading="This is full width card heading"
@@ -87,6 +88,7 @@ function App() {
               </List>
             </Dropdown>
           </Flex>
+          </FlexWrap>
         </Wrapper></Router>
     </div>
   );

@@ -22,7 +22,7 @@ const Banner = ({
   
 }:Props) => {
   return (
-    <div className={`banner ${bannerClass ? bannerClass : '' } ${bannerSize} ${bannerOverlay}`} id={bannerId}>
+    <div className={`banner${bannerClass ? (" "+ bannerClass) : '' }${bannerSize ? (" " + bannerSize) : ''}${bannerOverlay ? (" " + bannerOverlay) : ''}`} id={bannerId}>
       {bannerImage ? <img src={bannerImage} alt={alterText} /> : ""}
       <div className="bannerChildren">{children}</div>
     </div>
