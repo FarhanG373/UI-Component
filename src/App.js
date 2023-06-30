@@ -15,6 +15,7 @@ import List from './components/List/List';
 import ListItem from './components/List/ListItem';
 import FlexWrap from './components/FlexWrap/FlexWrap';
 import Image from './components/Image/Image';
+import Button from './components/Button/Button';
 
 function App() {
   const options = [
@@ -28,6 +29,7 @@ function App() {
         <NavBar Logo={logo} navBarColor="dark" />
         <Banner bannerImage="https://images.pexels.com/photos/3794748/pexels-photo-3794748.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" bannerSize="full" bannerOverlay="lightOverlay" />
         <Wrapper wrapClass="fluidWrap">
+          <Button link={`123`}>123</Button>
         <FlexWrap FlexWrap='wrap'>
           <Flex FlexJustify="justify-right" FlexAlign="align-flex-start" FlexWidth="col-3" >
             <Card

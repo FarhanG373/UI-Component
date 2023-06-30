@@ -6,19 +6,29 @@ export interface Props {
   ButtonClass?:color;
   ButtonId?: any;
   children?: any;
-onClick?:any
+  onClick?: any;
+  link?: any;
 }
 
 const Button = ({
   ButtonClass = "primary",
   ButtonId,
   children,
-  onClick
+  onClick,
+  link
 }: Props) => {
   return (
-    <button className={`btn${ButtonClass ? (" " + ButtonClass): ''}`} id={ButtonId} onClick={onClick}>
+    <>
+    {
+        link ?
+          <a href={link} className={`btn-link`} id={ButtonId} onClick={onClick}>{children}</a>
+          :
+          <button className={`btn${ButtonClass ? (" " + ButtonClass): ''}`} id={ButtonId} onClick={onClick}>
       {children}
     </button>
+    }
+    </>
+    
   )
 }
 
