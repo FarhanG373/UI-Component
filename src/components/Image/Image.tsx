@@ -1,7 +1,7 @@
 import React from 'react';
 import './Image.scss'
 export type radius = 'rounded' | 'circle' | 'sharp';
-
+export type align = 'left' | 'enter' | 'right';
 
 export interface Props {
   ImageClass?: any;
@@ -9,6 +9,7 @@ export interface Props {
   ImagePath: any;
   ImageAlt: any;
   ImageRadius: radius;
+  ImageAlign?: align;
 }
 
 const Image = ({
@@ -16,11 +17,11 @@ const Image = ({
   ImageId,
   ImagePath,
   ImageAlt,
-  ImageRadius = 'sharp'
-  
+  ImageRadius = 'sharp',
+  ImageAlign = 'left'
 }:Props) => {
   return (
-    <img src={ImagePath} className={ImageClass + ImageRadius} id={ImageId} alt={ImageAlt}/>
+    <img src={ImagePath} className={`img${ImageClass ? (' ' + ImageClass) : ''}${ImageRadius ?(' ' + ImageRadius) : ''}${ImageAlign ?(' ' + ImageAlign) : ''}`} id={ImageId} alt={ImageAlt}/>
   )
 }
 
