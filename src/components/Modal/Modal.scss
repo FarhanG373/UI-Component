@@ -1,0 +1,53 @@
+.modal {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, .7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.small {
+        .modalContent {
+            max-width: 700px;
+            width: 100%;
+        }
+    }
+
+    &.medium {
+        .modalContent {
+            max-width: 980px;
+            width: 100%;
+        }
+    }
+
+    &.large {
+        .modalContent {
+            max-width: 1200px;
+            width: 100%;
+        }
+    }
+
+    .modalContent {
+        background-color: #fff;
+        position: relative;
+
+        .close {
+            background-color: transparent;
+            border: 0px;
+            padding: 0px;
+            font-size: 14px;
+            font-weight: bold;
+            position: absolute;
+            top: 6px;
+            right: 10px;
+        }
+
+        .modalBody {
+            padding: 16px;
+        }
+    }
+}

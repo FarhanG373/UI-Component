@@ -16,6 +16,7 @@ import ListItem from './components/List/ListItem';
 import FlexWrap from './components/FlexWrap/FlexWrap';
 import Image from './components/Image/Image';
 import Button from './components/Button/Button';
+import Modal from './components/Modal/Modal';
 
 function App() {
   const options = [
@@ -25,6 +26,7 @@ function App() {
   ];
   return (
     <div className="App">
+      <Modal>xzzd sfsdfgdsfdfg dfg dfg dfg dfgdgf </Modal>
       <Router>
         <NavBar Logo={logo} navBarColor="dark" />
         <Banner bannerImage="https://images.pexels.com/photos/3794748/pexels-photo-3794748.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" bannerSize="full" bannerOverlay="lightOverlay" />
