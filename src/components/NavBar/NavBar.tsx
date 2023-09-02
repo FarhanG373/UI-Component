@@ -12,6 +12,7 @@ export interface Props {
   NavMobileClose?:any,
   Logo?: any
   navPosition?: position,
+  children?: any;
 }
 
 
@@ -19,10 +20,11 @@ const NavBar = ({
   navBarColor = "dark",
   navBarClass,
   navBarId,
-  NavMobileOpen,
-  NavMobileClose,
+  NavMobileOpen = 'open',
+  NavMobileClose = 'close',
   Logo,
   navPosition = 'scroler',
+  children
 }: Props) => {
   const [isOpen, setOpen] = useState(false);
   return (
@@ -31,9 +33,7 @@ const NavBar = ({
       <div className="link_section">
         <label htmlFor="navCheck" className="NavLabel" onClick={()=>{setOpen(!isOpen)}}><span className="MobileNav">{NavMobileOpen}</span><span className="MobileNavClose">{NavMobileClose}</span></label>
         <div className="main_links">
-          <ul>
-            <li><Link to="/">Home</Link></li>
-          </ul>
+          {children}
         </div>
       </div>
     </div>
