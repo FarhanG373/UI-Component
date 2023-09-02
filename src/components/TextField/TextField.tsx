@@ -3,17 +3,18 @@ import Label from '../Label/Label';
 
 import './TextFiled.scss'
 
-export type type = "input" | 'textarea';
+export type input = "input" | 'textarea';
+export type type = 'text' | 'radio' | 'checkbox' | 'color' | 'file' | 'date' | 'time' | 'datetime-local' |'submit' | 'button' | 'email' | 'hidden' | 'image' | 'number' | 'password' | 'range' | 'search' | 'url';
 
 export interface Props {
   TextFieldClass?: any;
   TextFieldId?: any;
-  Type: type;
+  Type: input;
   value?: any,
   name?: any,
   PlaceHolder?: any,
   LabelName?: any
-  SubType?: any,
+  SubType?: type,
   onClick?: any,
   onBlur?: any,
   onFocus?:any,
@@ -27,7 +28,7 @@ function TextField({
   name,
   PlaceHolder,
   LabelName,
-  SubType,
+  SubType = 'text',
   onClick,
   onBlur,
   onFocus

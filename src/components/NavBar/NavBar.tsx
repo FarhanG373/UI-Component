@@ -2,7 +2,7 @@ import './NavBar.scss';
 import {useState} from 'react'
 import { Link } from "react-router-dom";
 export type NavColor = 'light' | 'dark' | 'transparent';
-export type position = 'fixed' | 'scroler'
+export type position = 'fixed' | 'scroler';
 export interface Props {
   navBarColor?: NavColor,
   navBarClass?: string,
@@ -11,7 +11,7 @@ export interface Props {
   NavMobileOpen?: any,
   NavMobileClose?:any,
   Logo?: any
-  navPosition?: position
+  navPosition?: position,
 }
 
 
@@ -22,7 +22,7 @@ const NavBar = ({
   NavMobileOpen,
   NavMobileClose,
   Logo,
-  navPosition = 'scroler'
+  navPosition = 'scroler',
 }: Props) => {
   const [isOpen, setOpen] = useState(false);
   return (
