@@ -1,0 +1,55 @@
+@import 'vriables';
+
+@mixin smallMobile {
+    @media only screen and (max-width: $smallMobile) {
+        @content;
+    }
+}
+
+@mixin mediumMobile {
+    @media only screen and (max-width: $mediumMobile) {
+        @content;
+    }
+}
+
+@mixin largeMobile {
+    @media only screen and (max-width: $largeMobile) {
+        @content;
+    }
+}
+
+@mixin smallTablet {
+    @media only screen and (max-width: $smallTablet) {
+        @content;
+    }
+}
+
+@mixin mediumTablet {
+    @media only screen and (max-width: $mediumTablet) {
+        @content;
+    }
+}
+
+@mixin largeTablet {
+    @media only screen and (max-width: $largeTablet) {
+        @content;
+    }
+}
+
+@mixin smallDesktop {
+    @media only screen and (max-width: $smallDesktop) {
+        @content;
+    }
+}
+
+@mixin mediumDestop {
+    @media only screen and (max-width: $mediumDestop) {
+        @content;
+    }
+}
+
+@mixin largeDestop {
+    @media only screen and (max-width: $largeDestop) {
+        @content;
+    }
+}
