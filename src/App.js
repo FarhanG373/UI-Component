@@ -18,6 +18,7 @@ import Image from './components/Image/Image';
 import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
 import DragDrop from './components/DragDrop/DragDrop';
+import TabMenu from './components/TabMenu/TabMenu';
 
 function App() {
   const options = [
@@ -25,6 +26,7 @@ function App() {
     { label: 'Vegetable', value: 'vegetable' },
     { label: 'Meat', value: 'meat' },
   ];
+  console.log(options.indexOf);
   return (
     <div className="App">
       
@@ -102,6 +104,7 @@ function App() {
           </FlexWrap>
 
           <DragDrop deleteButtonText={`Delete`} initialText={`Drag drop or click`} fileSizeErrorMsg={`Fole size should be less then 1 MB`} fileFormatErrorMsg={`Please add PDF formate`}/>
+          <TabMenu tabs={options}/>
         </Wrapper></Router>
     </div>
   );

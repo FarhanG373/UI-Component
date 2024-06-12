@@ -8,6 +8,7 @@ export interface Props {
   children?: any;
   onClick?: any;
   link?: any;
+  customClass?: any;
 }
 
 const Button = ({
@@ -15,7 +16,8 @@ const Button = ({
   ButtonId,
   children,
   onClick,
-  link
+  link,
+  customClass
 }: Props) => {
   return (
     <>
@@ -23,7 +25,7 @@ const Button = ({
         link ?
           <a href={link} className={`btn-link`} id={ButtonId} onClick={onClick}>{children}</a>
           :
-          <button className={`btn${ButtonClass ? (" " + ButtonClass): ''}`} id={ButtonId} onClick={onClick}>
+          <button className={`btn${ButtonClass ? (" " + ButtonClass): ''}${customClass ? " "+customClass : ''}`} id={ButtonId} onClick={onClick}>
       {children}
     </button>
     }
