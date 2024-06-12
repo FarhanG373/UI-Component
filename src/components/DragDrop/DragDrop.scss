@@ -1,0 +1,44 @@
+.DragDrop {
+  border: 2px dashed #e7e7e7;
+  text-align: center;
+  &.draging {
+    border-color: yellow;
+  }
+  label {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    & > * {
+      width: 100%;
+    }
+  }
+  .file-drop-error {
+    color: #fff;
+    position: fixed;
+    top: 30px;
+    left: 0px;
+    background-color: red;
+    width: 100%;
+    button {
+      position: absolute;
+      right: 10px;
+      border: 0px;
+      padding: 0px;
+      color: #fff;
+      background-color: transparent;
+    }
+  }
+  input {
+    position: absolute;
+    left: -100%;
+  }
+  ul {
+    list-style: none;
+  }
+  &:focus-within {
+    border-color: yellow;
+  }
+}

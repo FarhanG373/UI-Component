@@ -17,6 +17,7 @@ import FlexWrap from './components/FlexWrap/FlexWrap';
 import Image from './components/Image/Image';
 import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
+import DragDrop from './components/DragDrop/DragDrop';
 
 function App() {
   const options = [
@@ -99,6 +100,8 @@ function App() {
             </Dropdown>
           </Flex>
           </FlexWrap>
+
+          <DragDrop deleteButtonText={`Delete`} initialText={`Drag drop or click`} fileSizeErrorMsg={`Fole size should be less then 1 MB`} fileFormatErrorMsg={`Please add PDF formate`}/>
         </Wrapper></Router>
     </div>
   );
