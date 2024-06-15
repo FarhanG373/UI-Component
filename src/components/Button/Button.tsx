@@ -23,7 +23,7 @@ const Button = ({
     <>
     {
         link ?
-          <a href={link} className={`btn-link`} id={ButtonId} onClick={onClick}>{children}</a>
+          <a href={link} className={`btn btn-link`} id={ButtonId} onClick={onClick}>{children}</a>
           :
           <button className={`btn${ButtonClass ? (" " + ButtonClass): ''}${customClass ? " "+customClass : ''}`} id={ButtonId} onClick={onClick}>
       {children}

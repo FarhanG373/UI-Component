@@ -3,9 +3,10 @@ import "./TabMenu.scss";
 import Tab from "./Tab";
 
 export interface Props {
-  tabs: any[];
+  Label: any[];
+  Value: any[];
 }
-const TabMenu = ({ tabs }: Props) => {
+const TabMenu = ({ Label, Value }: Props) => {
   const [activeTab, setActiveTab] = useState(1);
   const handleTabClick = (index: number) => {
     setActiveTab(index + 1);
@@ -14,10 +15,10 @@ const TabMenu = ({ tabs }: Props) => {
     <>
       <div className="tabs-container" role="tabpanel">
         <div className="tabs" role="tablist">
-          {tabs.map((tab: any, index: number) => (
+          {Label.map((tab: any, index: number) => (
             <Tab
               key={index}
-              label={tab.label}
+              label={Label[index]}
               onClick={() => handleTabClick(index)}
               isActive={index + 1 === activeTab}
             />
@@ -25,11 +26,11 @@ const TabMenu = ({ tabs }: Props) => {
         </div>
         <div className="tab-content">
           {activeTab &&
-            tabs.map((tab: any, index: number) => (
+            Value.map((tab: any, index: number) => (
               <div
                 className={`content${activeTab === index + 1 ? " " + "active" : ""}`}
               >
-                {tab.value}
+                {Value[index]}
               </div>
             ))}
         </div>
