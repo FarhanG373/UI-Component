@@ -1,0 +1,32 @@
+.pagination {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li {
+        button {
+            border: 1px solid #e7e7e7;
+            padding:1rem;
+            background-color: transparent;
+        }
+        &:first-child {
+            button {
+                border-top-left-radius:8px;
+                border-bottom-left-radius:8px;
+            }
+        }
+        &:last-child {
+            button {
+                border-top-right-radius:8px;
+                border-bottom-right-radius:8px;
+            }
+        }
+        &.active {
+            button {
+                border:1px solid #000; 
+            }
+        }
+    }
+}

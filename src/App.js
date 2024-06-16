@@ -20,14 +20,16 @@ import DragDrop from "./components/DragDrop/DragDrop";
 import TabMenu from "./components/TabMenu/TabMenu";
 import Table from "./components/Table/Table";
 import Accordian from "./components/Accordian/Accordian";
+import Pagination from "./components/Pagination/Pagination";
+import { useState } from "react";
 function App() {
   const options = [
     { label99: "Fruit", value1: "fruit" },
     { label99: "Vegetable", value1: "vegetable" },
     { label99: "Meat", value1: "meat" },
   ];
-  // console.log(options.indexOf);
-  console.log(options.map(({ label1 }) => ({ label1 })));
+  // // console.log(options.indexOf);
+  // console.log(options.map(({ label1 }) => ({ label1 })));
 
   const data = [
     {
@@ -101,7 +103,7 @@ function App() {
       country: "Greece",
     },
   ];
-
+  console.log(data.length);
   const accordionItems = [
     {
       title1: "Accordion Item #1",
@@ -155,6 +157,7 @@ function App() {
       ),
     },
   ];
+
   return (
     <div className="App">
       <Router>
@@ -278,6 +281,7 @@ function App() {
             title={accordionItems.map(({ title1 }) => [title1])}
             content={accordionItems.map(({ content }) => [content])}
           />
+          <Pagination itemPerPageProp={3} totalPagesProp={data.length} />
         </Wrapper>
       </Router>
     </div>
