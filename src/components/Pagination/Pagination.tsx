@@ -16,7 +16,7 @@ const Pagination = ({ itemPerPageProp, totalPagesProp }: Props) => {
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
-  console.log(totalPages);
+  // console.log(totalPages);
 
   return (
     <ul className="pagination">

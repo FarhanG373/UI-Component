@@ -22,7 +22,21 @@ import Table from "./components/Table/Table";
 import Accordian from "./components/Accordian/Accordian";
 import Pagination from "./components/Pagination/Pagination";
 import { useState } from "react";
+import ToolTip from "./components/ToolTip/ToolTip";
 function App() {
+
+const [dataContent, setData] = useState([]);
+
+const dataAPI = async () => {
+await fetch('https://jsonplaceholder.typicode.com/todos')
+.then(response => response.json())
+.then(json => console.log(json))
+setData(dataContent)
+
+console.log(dataContent);
+}
+
+
   const options = [
     { label99: "Fruit", value1: "fruit" },
     { label99: "Vegetable", value1: "vegetable" },
@@ -103,7 +117,7 @@ function App() {
       country: "Greece",
     },
   ];
-  console.log(data.length);
+  // console.log(data.length);
   const accordionItems = [
     {
       title1: "Accordion Item #1",
@@ -282,6 +296,7 @@ function App() {
             content={accordionItems.map(({ content }) => [content])}
           />
           <Pagination itemPerPageProp={3} totalPagesProp={data.length} />
+          <ToolTip tooltipLabel={`1234`} tootTipContent={`ewrewrewr`}></ToolTip>
         </Wrapper>
       </Router>
     </div>

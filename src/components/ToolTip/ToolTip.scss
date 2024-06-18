@@ -1,0 +1,46 @@
+.toolTip {
+  .ttBtn {
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+    position: relative;
+    min-width: 20px;
+    min-height: 20px;
+    span {
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #000;
+        border-radius: 100%;
+        top: 0px;
+        left: 0px;
+      }
+
+      &:before {
+        content: "?";
+        display: block;
+        position: absolute;
+        top: 59%;
+        left: 53%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .ttContent {
+    display: none;
+  }
+
+  &.open,
+  &:focus-visible {
+    .ttContent {
+      display: block;
+    }
+  }
+}
