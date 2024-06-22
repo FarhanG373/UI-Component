@@ -1,65 +1,52 @@
 import React, { useState } from "react";
-import './Table.scss';
-export type Data = {
-  id: number;
-  name: string;
-  company: string;
-  active: boolean;
-  country: string;
-}[];
-export type TableProps = {
-  rows: Data;
-  filterVisible?: boolean;
-  sortVisible?: boolean;
-  orderByVisible?: boolean;
+import TableHeader from "./TableHeader";
+import TableRows from "./TableRows";
+export interface Props {
+  tableHeader: any;
+  tableData: any;
   bordered?: boolean;
   striped?: boolean;
   hoverable?: boolean;
   isDark?: boolean;
-};
-export const capitalize = (str: string) =>
-  str?.replace(/\b\w/g, (substr) => substr.toUpperCase());
+  filterVisible?: boolean;
+  orderByVisible?: boolean;
+  sortVisible?: boolean;
+}
+
+export const capitalize = (str: string) => str?.replace(/\b\w/g, (substr) => substr.toUpperCase());
+
 const Table = ({
-  rows,
-  filterVisible = false,
-  sortVisible = false,
-  orderByVisible = false,
+  tableHeader,
+  tableData,
   bordered,
   striped,
   hoverable,
-  isDark
-}: TableProps) => {
-  const [sortedRows, setRows] = useState(rows);
+  isDark,
+  filterVisible = false,
+  orderByVisible = false,
+  sortVisible = false,
+}: Props) => {
+  const [sortedRows, setRows] = useState(tableData);
   const [order, setOrder] = useState("asc");
-  const [sortKey, setSortKey] = useState(Object.keys(rows[0])[0]);
-
-  const formatEntry = (entry: string | number | boolean) => {
-    if (typeof entry === "boolean") {
-      return entry ? "✅" : "❌";
-    }
-    return entry;
-  };
-
-  const filter = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-
-    if (value) {
+  const [sortKey, setSortKey] = useState(Object.keys(tableData));
+  const handleFilter = (e: any) => {
+    const val = e.target.value;
+    if (val) {
       setRows([
-        ...rows.filter((row) => {
-          return Object.values(row).join("").toLowerCase().includes(value);
+        ...tableData.filter((row: any) => {
+          return Object.values(row).join("").toLowerCase().includes(val);
         }),
       ]);
     } else {
-      setRows(rows);
+      setRows(tableData);
     }
   };
 
-  const sort = (value: keyof Data[0], order: string) => {
+  const sort = (value: any, order: string) => {
     const returnValue = order === "desc" ? 1 : -1;
-
     setSortKey(value);
     setRows([
-      ...sortedRows.sort((a, b) => {
+      ...sortedRows.sort((a: any, b: any) => {
         return a[value] > b[value] ? returnValue * -1 : returnValue;
       }),
     ]);
@@ -67,26 +54,26 @@ const Table = ({
 
   const updateOrder = () => {
     const updatedOrder = order === "asc" ? "desc" : "asc";
-
     setOrder(updatedOrder);
-    sort(sortKey as keyof Data[0], updatedOrder);
+    sort(sortKey, updatedOrder);
   };
-
   return (
-    <>
-      <div className="controls">
+    <div className="tableWrap">
+      <div className="tableControls">
         {filterVisible === true ? (
-          <input type="text" placeholder="Filter items" onChange={filter} />
+          <div className="filter">
+            <input
+              type="search"
+              placeholder="Filter items"
+              onChange={handleFilter}
+            />
+          </div>
         ) : (
           ""
         )}
         {orderByVisible === true ? (
-          <select
-            onChange={(event) =>
-              sort(event.target.value as keyof Data[0], order)
-            }
-          >
-            {Object.keys(rows[0]).map((entry, index) => (
+          <select onChange={(event) => sort(event.target.value, order)}>
+            {Object.keys(tableData[0]).map((entry, index) => (
               <option value={entry} key={index}>
                 Order by {capitalize(entry)}
               </option>
@@ -101,26 +88,30 @@ const Table = ({
           ""
         )}
       </div>
-      <table className={`table${bordered ? ' '+'table-bordered' : ''}${hoverable ? ' '+'table-hover':''}${striped ? ' ' + 'table-striped':''}${isDark ? ' '+'table-dark':''}`}>
-        <thead>
-          <tr>
-            {Object.keys(rows[0]).map((entry, index) => (
-              <th key={index}>{capitalize(entry)}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {sortedRows.map((row, index) => (
-            <tr key={index}>
-              {Object.values(row).map((entry, columnIndex) => (
-                <td key={columnIndex}>{formatEntry(entry)}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      {!sortedRows.length && <h1>No results... Try expanding the search</h1>}
-    </>
+      {sortedRows.length > 0 ? (
+        <table
+          className={`table${bordered ? " " + "table-bordered" : ""}${
+            hoverable ? " " + "table-hover" : ""
+          }${striped ? " " + "table-striped" : ""}${
+            isDark ? " " + "table-dark" : ""
+          }`}
+        >
+          {(tableHeader !== undefined || null) &&
+          (tableData !== undefined || null) ? (
+            <>
+              <TableHeader tableHeader={tableHeader}></TableHeader>
+              <TableRows
+                tableData={tableData}
+                sortedRows={sortedRows}
+              ></TableRows>
+            </>
+          ) : null}
+        </table>
+      ) : (
+        <h1>No results... Try expanding the search</h1>
+      )}
+    </div>
   );
 };
+
 export default Table;

@@ -21,22 +21,37 @@ import TabMenu from "./components/TabMenu/TabMenu";
 import Table from "./components/Table/Table";
 import Accordian from "./components/Accordian/Accordian";
 import Pagination from "./components/Pagination/Pagination";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ToolTip from "./components/ToolTip/ToolTip";
 function App() {
+  const [dataContent, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-const [dataContent, setData] = useState([]);
+  const dataAPI = async () => {
+    await fetch("https://jsonplaceholder.typicode.com/todos")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((dataContent) => {
+        setLoading(true);
+        if (dataContent) {
+          let res = dataContent.map(({ userId, completed, ...item }) => item);
+          setData(res);
+          console.log(res); // 'dataContent' is defined here
+          setLoading(false);
+        }
+      })
+      .catch((error) => {
+        console.error("There was an error!", error);
+      });
+  };
 
-const dataAPI = async () => {
-await fetch('https://jsonplaceholder.typicode.com/todos')
-.then(response => response.json())
-.then(json => console.log(json))
-setData(dataContent)
-
-console.log(dataContent);
-}
-
-
+  useEffect(() => {
+    dataAPI();
+  }, []);
   const options = [
     { label99: "Fruit", value1: "fruit" },
     { label99: "Vegetable", value1: "vegetable" },
@@ -290,7 +305,9 @@ console.log(dataContent);
             Label={data.map(({ company }) => [company])}
             Value={data.map(({ name }) => [name])}
           />
-          <Table rows={data} />
+          {!loading && (
+            <Table tableData={dataContent} tableHeader={dataContent} />
+          )}
           <Accordian
             title={accordionItems.map(({ title1 }) => [title1])}
             content={accordionItems.map(({ content }) => [content])}
