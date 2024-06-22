@@ -313,7 +313,7 @@ function App() {
             content={accordionItems.map(({ content }) => [content])}
           />
           <Pagination itemPerPageProp={3} totalPagesProp={data.length} />
-          <ToolTip tooltipLabel={`1234`} tootTipContent={`ewrewrewr`}></ToolTip>
+          <ToolTip tooltipLabel={`tooltip(click me)`} tootTipContent={`ewrewrewr`}></ToolTip>
         </Wrapper>
       </Router>
     </div>
