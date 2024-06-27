@@ -1,48 +1,19 @@
-.tableControls {
-  display: flex;
-  justify-content: space-between;
-  .filter {
-    flex-grow: 1;
-    label {
-      display: block;
-      font-weight: bold;
-    }
-    input {
-      width: 100%;
-      height: 38px;
-      padding: 0px 12px;
-    }
-  }
-  .orderBy {
-    flex-grow: 1;
-    label {
-      display: block;
-      font-weight: bold;
-    }
-    select {
-      width: 100%;
-      height: 38px;
-      padding: 0px 12px;
-    }
-  }
-  .sortingBtn {
-    flex-grow: 1;
-    border:0px;
-    font-weight: bold;
-    padding: .5rem 2rem;
-  }
-}
 table {
   width: 100%;
   border-collapse: collapse;
   border: 1px solid #000;
-  
-
+  thead {
+    tr {
+      th {
+        color: #e6e6e6 !important;
+        background: #000000 !important;
+      }
+    }
+  }
   tr {
     th,
     td {
       padding: 4px 6px;
-      text-align: left;
     }
   }
 
@@ -82,12 +53,62 @@ table {
         color: #fff;
         td {
           border: 1px solid #303030;
+          .tableLabel {
+            position: absolute;
+            &:before {
+              border: 1px solid #fff;
+            }
+            &:after {
+              background: #fff;
+            }
+          }
         }
       }
     }
   }
-}
-thead {
-  color: #e6e6e6;
-  background: #000000;
+  .tableLabel {
+    position: absolute;
+    cursor: pointer;
+    &:before {
+      content: "";
+      border: 1px solid #000;
+      width: 1rem;
+      height: 1rem;
+      display: block;
+      position: relative;
+      left: 0px;
+      top: -7px;
+    }
+    &:after {
+      content: "";
+    background: #000;
+    width: 0.6rem;
+    height: .65rem;
+    display: block;
+    position: relative;
+    left: 4px;
+    top: -21px;
+      display: none;
+    }
+  }
+  input {
+    width: auto;
+    height: auto;
+    position: absolute;
+    &[type="checkbox"] {
+      opacity: 0;
+      &:checked {
+        & ~ .tableLabel {
+          &:after {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .sr-only {
+    position: absolute;
+    left: -1000000%;
+  }
 }

@@ -7,7 +7,7 @@ import Label from "./components/Label/Label";
 import NavBar from "./components/NavBar/NavBar";
 import TextField from "./components/TextField/TextField";
 import Wrapper from "./components/Wrapper/Wrapper";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 import Select from "./components/Select/Select";
 import SelectOptions from "./components/Select/SelectOptions";
 import Dropdown from "./components/Dropdown/Dropdown";
@@ -18,11 +18,13 @@ import Button from "./components/Button/Button";
 import Modal from "./components/Modal/Modal";
 import DragDrop from "./components/DragDrop/DragDrop";
 import TabMenu from "./components/TabMenu/TabMenu";
-import Table from "./components/Table/Table";
 import Accordian from "./components/Accordian/Accordian";
 import Pagination from "./components/Pagination/Pagination";
 import { useEffect, useState } from "react";
 import ToolTip from "./components/ToolTip/ToolTip";
+import TabelPage from "./Pages/TabelPage";
+import Table from './components/Table/Table';
+import {TableColumn} from './Pages/TableColumn'
 function App() {
   const [dataContent, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -186,11 +188,17 @@ function App() {
       ),
     },
   ];
-
+  // const handleEdit = (item) => () => {
+  //   alert(item)
+  // }
   return (
     <div className="App">
       <Router>
         <NavBar Logo={logo} navBarColor="dark" />
+        <Routes>
+       <Route path="/tableData" element={<TabelPage/>} />
+        </Routes>
+        {/* <Table cols={TableColumn(handleEdit)} data={dataContent}></Table> */}
         <Banner
           bannerImage="https://images.pexels.com/photos/3794748/pexels-photo-3794748.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
           bannerSize="full"
@@ -305,9 +313,6 @@ function App() {
             Label={data.map(({ company }) => [company])}
             Value={data.map(({ name }) => [name])}
           />
-          {!loading && (
-            <Table tableData={dataContent} tableHeader={dataContent} />
-          )}
           <Accordian
             title={accordionItems.map(({ title1 }) => [title1])}
             content={accordionItems.map(({ content }) => [content])}
@@ -321,3 +326,4 @@ function App() {
 }
 
 export default App;
+ 

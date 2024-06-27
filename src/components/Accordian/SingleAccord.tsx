@@ -6,8 +6,9 @@ export interface Props {
   content: [];
   isOpen: boolean;
   btnOnClick: () => void;
+  children?:any
 }
-const SingleAccord = ({ title, content, isOpen, btnOnClick }: Props) => {
+const SingleAccord = ({ title, content, isOpen, btnOnClick, children }: Props) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
 
@@ -25,7 +26,7 @@ const SingleAccord = ({ title, content, isOpen, btnOnClick }: Props) => {
     <li className={`accordion-item ${isOpen ? "active" : ""}`}>
       <h2 className="accordion-item-title">
         <button className="accordion-item-btn" onClick={btnOnClick}>
-          {title ? title : Children}
+          {title ? title : children}
         </button>
       </h2>
       <div
@@ -36,7 +37,7 @@ const SingleAccord = ({ title, content, isOpen, btnOnClick }: Props) => {
         }}
       >
         <div ref={contentRef} className="accordion-item-content">
-          {content ? content : Children}
+          {content ? content : children}
         </div>
       </div>
     </li>
