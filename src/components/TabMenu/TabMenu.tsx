@@ -28,6 +28,7 @@ const TabMenu = ({ Label, Value }: Props) => {
           {activeTab &&
             Value.map((tab: any, index: number) => (
               <div
+                key={index}
                 className={`content${activeTab === index + 1 ? " " + "active" : ""}`}
               >
                 {Value[index]}

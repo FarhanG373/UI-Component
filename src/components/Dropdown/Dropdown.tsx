@@ -1,7 +1,7 @@
-import React,{useState} from 'react';
-import './Dropdown.scss';
+import React, { useState, useEffect, useRef } from "react";
+import "./Dropdown.scss";
 export interface Props {
-  fieldClass?: any,
+  fieldClass?: any;
   fieldId?: any;
   children: any;
   filedFocus?: any;
@@ -18,21 +18,50 @@ const Dropdown = ({
   filedFocus,
   fieldBlur,
   dropdownClass,
-  dropdownBtnName
+  dropdownBtnName,
 }: Props) => {
   const [fClick, setFclick] = useState(false);
-  return (
-    <div className='drop_down'>
-      <button className={`dropdownBtn${fieldClass ? (" " + fieldClass) : ''} ${fClick ? 'dropOpen' : 'dropClose'}`} id={fieldId} onBlur={fieldBlur} onFocus={filedFocus} onClick={()=>setFclick(!fClick)}>{ dropdownBtnName}</button>
-      {
-        fClick && 
-        <div className={`drop_container${dropdownClass ? (" " + dropdownClass) : ''}`}>
-        {children}
-      </div>
-      }
-      
-    </div>
-  )
-}
 
-export default Dropdown
+  useEffect(() => {
+    if (fClick) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }
+  }, [fClick]);
+  const dropdownRef = useRef<any>();
+  const handleClickOutside = (event: any) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setFclick(false);
+      console.log(fClick);
+    }
+  };
+  return (
+    <div className="drop_down" ref={dropdownRef}>
+      <button
+        className={`dropdownBtn${fieldClass ? " " + fieldClass : ""} ${
+          fClick ? "dropOpen" : "dropClose"
+        }`}
+        id={fieldId}
+        onBlur={fieldBlur}
+        onFocus={filedFocus}
+        onClick={() => setFclick(!fClick)}
+      >
+        {dropdownBtnName}
+      </button>
+      {fClick && (
+        <div
+          className={`drop_container${
+            dropdownClass ? " " + dropdownClass : ""
+          }`}
+          onClick={() => setFclick(!fClick)}
+        >
+          {children}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Dropdown;
