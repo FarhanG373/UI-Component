@@ -7,7 +7,7 @@ import Label from "./components/Label/Label";
 import NavBar from "./components/NavBar/NavBar";
 import TextField from "./components/TextField/TextField";
 import Wrapper from "./components/Wrapper/Wrapper";
-import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route,Link } from "react-router-dom";
 import Select from "./components/Select/Select";
 import SelectOptions from "./components/Select/SelectOptions";
 import Dropdown from "./components/Dropdown/Dropdown";
@@ -20,47 +20,16 @@ import DragDrop from "./components/DragDrop/DragDrop";
 import TabMenu from "./components/TabMenu/TabMenu";
 import Accordian from "./components/Accordian/Accordian";
 import Pagination from "./components/Pagination/Pagination";
-import { useEffect, useState } from "react";
 import ToolTip from "./components/ToolTip/ToolTip";
 import TabelPage from "./Pages/TabelPage";
-import Table from './components/Table/Table';
-import {TableColumn} from './Pages/TableColumn'
+import OldTable from "./Pages/OldTable"
 function App() {
-  const [dataContent, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const dataAPI = async () => {
-    await fetch("https://jsonplaceholder.typicode.com/todos")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((dataContent) => {
-        setLoading(true);
-        if (dataContent) {
-          let res = dataContent.map(({ userId, completed, ...item }) => item);
-          setData(res);
-          console.log(res); // 'dataContent' is defined here
-          setLoading(false);
-        }
-      })
-      .catch((error) => {
-        console.error("There was an error!", error);
-      });
-  };
-
-  useEffect(() => {
-    dataAPI();
-  }, []);
+ 
   const options = [
     { label99: "Fruit", value1: "fruit" },
     { label99: "Vegetable", value1: "vegetable" },
     { label99: "Meat", value1: "meat" },
   ];
-  // // console.log(options.indexOf);
-  // console.log(options.map(({ label1 }) => ({ label1 })));
 
   const data = [
     {
@@ -134,7 +103,6 @@ function App() {
       country: "Greece",
     },
   ];
-  // console.log(data.length);
   const accordionItems = [
     {
       title1: "Accordion Item #1",
@@ -188,17 +156,20 @@ function App() {
       ),
     },
   ];
-  // const handleEdit = (item) => () => {
-  //   alert(item)
-  // }
   return (
     <div className="App">
       <Router>
-        <NavBar Logo={logo} navBarColor="dark" />
+        <NavBar Logo={logo} navBarColor="dark">
+          <ul>
+            <li><Link to={`/`}>Home</Link></li>
+            <li><Link to={`/tableData`}>Table with Colum setting</Link></li>
+            <li><Link to={`/oldtableData`}>Table with same API</Link></li>
+          </ul>
+        </NavBar>
         <Routes>
        <Route path="/tableData" element={<TabelPage/>} />
+       <Route path="/oldtableData" element={<OldTable/>} />
         </Routes>
-        {/* <Table cols={TableColumn(handleEdit)} data={dataContent}></Table> */}
         <Banner
           bannerImage="https://images.pexels.com/photos/3794748/pexels-photo-3794748.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
           bannerSize="full"

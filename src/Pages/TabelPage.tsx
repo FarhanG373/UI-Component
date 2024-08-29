@@ -3,13 +3,13 @@ import { TableColumn } from "./TableColumn";
 import Table from "../components/Table/Table";
 const TabelPage = () => {
   const [rows, setRows] = useState<Array<any>>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const fetchData = async () => {
     await fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
       .then((rows) => {
-        setLoading(true);
+        setLoading(false);
         setRows(rows);
       });
   };
@@ -20,6 +20,7 @@ const TabelPage = () => {
   const handleEdit = (item: any) => () => {
     alert(item);
   };
+  if (loading) return <div>Loading...</div>;
   return <Table cols={TableColumn(handleEdit)} data={rows} />;
 };
 
