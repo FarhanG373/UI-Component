@@ -1,4 +1,5 @@
 .drop_down {
+    position: relative;
     button {
         border: 1px solid #e7e7e7;
         background-color: transparent;
@@ -47,5 +48,9 @@
         box-sizing: border-box;
         padding: 1rem;
         margin-top: .5rem;
+        position: absolute;
+        width: 100%;
+        background-color: #fff;
+        z-index: 9;
     }
 }

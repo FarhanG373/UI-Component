@@ -1,183 +1,97 @@
 import "./App.scss";
 import logo from "./logo.svg";
-import Banner from "./components/Banner/Banner";
 import Card from "./components/Card/Card";
 import Flex from "./components/Flex/Flex";
-import Label from "./components/Label/Label";
 import NavBar from "./components/NavBar/NavBar";
-import TextField from "./components/TextField/TextField";
 import Wrapper from "./components/Wrapper/Wrapper";
-import { BrowserRouter as Router, Routes, Route,Link } from "react-router-dom";
-import Select from "./components/Select/Select";
-import SelectOptions from "./components/Select/SelectOptions";
-import Dropdown from "./components/Dropdown/Dropdown";
-import List from "./components/List/List";
-import ListItem from "./components/List/ListItem";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import FlexWrap from "./components/FlexWrap/FlexWrap";
-import Button from "./components/Button/Button";
-import Modal from "./components/Modal/Modal";
-import DragDrop from "./components/DragDrop/DragDrop";
-import TabMenu from "./components/TabMenu/TabMenu";
-import Accordian from "./components/Accordian/Accordian";
-import Pagination from "./components/Pagination/Pagination";
-import ToolTip from "./components/ToolTip/ToolTip";
-import TabelPage from "./Pages/TabelPage";
-import OldTable from "./Pages/OldTable"
-function App() {
- 
-  const options = [
-    { label99: "Fruit", value1: "fruit" },
-    { label99: "Vegetable", value1: "vegetable" },
-    { label99: "Meat", value1: "meat" },
-  ];
+import TabelPage from "./Pages/TableWithCol/TabelPage";
+import OldTable from "./Pages/TableWithoutCol/OldTable";
+import Banner from "./Pages/Banner/Banner";
+import ModalPage from "./Pages/ModalPage/ModalPage";
+import ListPage from "./Pages/ListPage/ListPage";
+import DropDownPage from "./Pages/DropDownPage/DropDownPage";
+import ComboBox from "./Pages/ComboBox/ComboBox";
+import FormElement from "./Pages/FormElement/FormElement";
+import DragDropPage from "./Pages/DragDropPage/DragDropPage";
+import TabsPage from "./Pages/TabsPage/TabsPage";
+import AccordianPage from "./Pages/AccordianPage/AccordianPage";
+import PaginationPage from "./Pages/PaginationPage/PaginationPage";
+import ToolTipPage from "./Pages/ToolTipPage/ToolTipPage";
+import ButtonPage from "./Pages/ButtonPage/ButtonPage";
 
-  const data = [
-    {
-      id: 0,
-      name: "Nguyen Nichols",
-      company: "PETIGEMS",
-      active: false,
-      country: "Kyrgyzstan",
-    },
-    {
-      id: 1,
-      name: "Estela Gomez",
-      company: "TRANSLINK",
-      active: false,
-      country: "Wallis and Futuna Islands",
-    },
-    {
-      id: 2,
-      name: "Bridges Doyle",
-      company: "METROZ",
-      active: false,
-      country: "Rwanda",
-    },
-    {
-      id: 3,
-      name: "Carver Avery",
-      company: "DIGITALUS",
-      active: true,
-      country: "Vatican City State (Holy See)",
-    },
-    {
-      id: 4,
-      name: "Flossie Jacobson",
-      company: "AUSTECH",
-      active: true,
-      country: "Reunion",
-    },
-    {
-      id: 5,
-      name: "Pat West",
-      company: "BESTO",
-      active: false,
-      country: "Benin",
-    },
-    {
-      id: 6,
-      name: "Kent Mcmahon",
-      company: "ESCHOIR",
-      active: true,
-      country: "Spain",
-    },
-    {
-      id: 7,
-      name: "Barnett Stuart",
-      company: "OVERPLEX",
-      active: false,
-      country: "Faroe Islands",
-    },
-    {
-      id: 8,
-      name: "Marylou Mayo",
-      company: "FILODYNE",
-      active: false,
-      country: "Croatia (Hrvatska)",
-    },
-    {
-      id: 9,
-      name: "Lambert Bond",
-      company: "SUREMAX",
-      active: false,
-      country: "Greece",
-    },
-  ];
-  const accordionItems = [
-    {
-      title1: "Accordion Item #1",
-      content: (
-        <div>
-          <strong>This is the first item's accordion body.</strong> It is hidden
-          by default, but shown when title is clicked. It will also be hidden if
-          the title is clicked again or when another item is clicked. You can
-          pass HTML tags in the content such as <u>underline tag</u>,{" "}
-          <i>italic</i>, or even another list like this:
-          <ul>
-            <li>Bread</li>
-            <li>Eggs</li>
-            <li>Milk</li>
-          </ul>
-        </div>
-      ),
-    },
-    {
-      title1: "Accordion Item #2",
-      content: (
-        <div>
-          <strong>This is the second item's accordion body.</strong> It is
-          hidden by default, but shown when title is clicked. It will also be
-          hidden if the title is clicked again or when another item is clicked.
-          You can pass HTML tags in the content such as <u>underline tag</u>,{" "}
-          <i>italic</i>, or even another list like this:
-          <ul>
-            <li>Bread</li>
-            <li>Eggs</li>
-            <li>Milk</li>
-          </ul>
-        </div>
-      ),
-    },
-    {
-      title1: "Accordion Item #3",
-      content: (
-        <div>
-          <strong>This is the third item's accordion body.</strong> It is hidden
-          by default, but shown when title is clicked. It will also be hidden if
-          the title is clicked again or when another item is clicked. You can
-          pass HTML tags in the content such as <u>underline tag</u>,{" "}
-          <i>italic</i>, or even another list like this:
-          <ul>
-            <li>Bread</li>
-            <li>Eggs</li>
-            <li>Milk</li>
-          </ul>
-        </div>
-      ),
-    },
-  ];
+function App() {
   return (
     <div className="App">
       <Router>
         <NavBar Logo={logo} navBarColor="dark">
           <ul>
-            <li><Link to={`/`}>Home</Link></li>
-            <li><Link to={`/tableData`}>Table with Colum setting</Link></li>
-            <li><Link to={`/oldtableData`}>Table with same API</Link></li>
+            <li>
+              <Link to={`/`}>Home</Link>
+            </li>
+            <li>
+              <Link to={`/tableData`}>Table with Colum setting</Link>
+            </li>
+            <li>
+              <Link to={`/oldtableData`}>Table with same API</Link>
+            </li>
+            <li>
+              <Link to={`/banner`}>Banner</Link>
+            </li>
+            <li>
+              <Link to={`/ModalPage`}>Modal</Link>
+            </li>
+            <li>
+              <Link to={`/list`}>List</Link>
+            </li>
+            <li>
+              <Link to={`/Drop`}>DropDown</Link>
+            </li>
+            <li>
+              <Link to={`/combo`}>ComboBox</Link>
+            </li>
+            <li>
+              <Link to={`/form`}>form Element</Link>
+            </li>
+            <li>
+              <Link to={`/dd`}>Drag Drop</Link>
+            </li>
+            <li>
+              <Link to={`/tab`}>Tab</Link>
+            </li>
+            <li>
+              <Link to={`/accordian`}>Accordian</Link>
+            </li>
+            <li>
+              <Link to={`/pagination`}>Pagination</Link>
+            </li>
+            <li>
+              <Link to={`/tooltip`}>ToolTip</Link>
+            </li>
+            <li>
+              <Link to={`/button`}>Button</Link>
+            </li>
           </ul>
         </NavBar>
         <Routes>
-       <Route path="/tableData" element={<TabelPage/>} />
-       <Route path="/oldtableData" element={<OldTable/>} />
+          <Route path="/tableData" element={<TabelPage />} />
+          <Route path="/oldtableData" element={<OldTable />} />
+          <Route path="/banner" element={<Banner />} />
+          <Route path="/ModalPage" element={<ModalPage />} />
+          <Route path="/list" element={<ListPage />} />
+          <Route path="/Drop" element={<DropDownPage />} />
+          <Route path="/combo" element={<ComboBox />} />
+          <Route path="/form" element={<FormElement />} />
+          <Route path="/dd" element={<DragDropPage />} />
+          <Route path="/tab" element={<TabsPage />} />
+          <Route path="/accordian" element={<AccordianPage />} />
+          <Route path="/pagination" element={<PaginationPage />} />
+          <Route path="/tooltip" element={<ToolTipPage />} />
+          <Route path="/button" element={<ButtonPage />} />
         </Routes>
-        <Banner
-          bannerImage="https://images.pexels.com/photos/3794748/pexels-photo-3794748.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          bannerSize="full"
-          bannerOverlay="lightOverlay"
-        />
-        <Wrapper wrapClass="fluidWrap">
-          <Button link={`123`}>123</Button>
-          <Modal>xzzd sfsdfgdsfdfg dfg dfg dfg dfgdgf </Modal>
+
+        <Wrapper wrapClass="fixWrap">
           <FlexWrap FlexWrap="wrap">
             <Flex
               FlexJustify="justify-right"
@@ -190,7 +104,6 @@ function App() {
                 CardImagePath="https://neilpatel.com/wp-content/uploads/2017/09/image-editing-tools.jpg"
                 CardImageAlt="im"
               />
-              <Modal>xzzd sfsdfgdsfdfg dfg dfg dfg dfgdgf 1</Modal>
             </Flex>
 
             <Flex
@@ -204,7 +117,6 @@ function App() {
                 CardImagePath="https://neilpatel.com/wp-content/uploads/2017/09/image-editing-tools.jpg"
                 CardImageAlt="im"
               />
-              <Modal>xzzd sfsdfgdsfdfg dfg dfg dfg dfgdgf 2</Modal>
             </Flex>
             <Flex
               FlexJustify="justify-right"
@@ -217,7 +129,6 @@ function App() {
                 CardImagePath="https://neilpatel.com/wp-content/uploads/2017/09/image-editing-tools.jpg"
                 CardImageAlt="im"
               />
-              <Modal>xzzd sfsdfgdsfdfg dfg dfg dfg dfgdgf 3</Modal>
             </Flex>
             <Flex
               FlexJustify="justify-right"
@@ -229,67 +140,10 @@ function App() {
                 cardBody="The list-style-type property applies to all lists, and to any element that is set to display: list-item.The color of the list marker will be whatever the computed color of the element is (set via the color property)."
                 CardImagePath="https://neilpatel.com/wp-content/uploads/2017/09/image-editing-tools.jpg"
                 CardImageAlt="im"
+                
               />
-              <Modal>xzzd sfsdfgdsfdfg dfg dfg dfg dfgdgf 4</Modal>
-            </Flex>
-            <Flex FlexWidth="full-col">
-              <TextField
-                Type="textarea"
-                PlaceHolder="Type your message"
-                LabelName="Text area"
-              ></TextField>
-            </Flex>
-            <Flex FlexWidth="full-col">
-              <TextField
-                Type="input"
-                SubType="time"
-                PlaceHolder="Enter the name"
-              ></TextField>
-            </Flex>
-            <Flex FlexWidth="full-col">
-              <Label>222</Label>
-            </Flex>
-            <Flex FlexWidth="full-col">
-              <Select>
-                {options.map((item) => {
-                  return (
-                    <SelectOptions
-                      optionLabel={item.label}
-                      optionValue={item.value}
-                    />
-                  );
-                })}
-              </Select>
-            </Flex>
-            <Flex FlexWidth="full-col">
-              <Dropdown dropdownBtnName={"Dropdown"}>
-                <List ListStyleType="none" Type="ul">
-                  <ListItem>123</ListItem>
-                  <ListItem>123</ListItem>
-                  <ListItem>123</ListItem>
-                  <ListItem>123</ListItem>
-                  <ListItem>123</ListItem>
-                </List>
-              </Dropdown>
             </Flex>
           </FlexWrap>
-
-          <DragDrop
-            deleteButtonText={`Delete`}
-            initialText={`Drag drop or click`}
-            fileSizeErrorMsg={`Fole size should be less then 1 MB`}
-            fileFormatErrorMsg={`Please add PDF formate`}
-          />
-          <TabMenu
-            Label={data.map(({ company }) => [company])}
-            Value={data.map(({ name }) => [name])}
-          />
-          <Accordian
-            title={accordionItems.map(({ title1 }) => [title1])}
-            content={accordionItems.map(({ content }) => [content])}
-          />
-          <Pagination itemPerPageProp={3} totalPagesProp={data.length} />
-          <ToolTip tooltipLabel={`tooltip(click me)`} tootTipContent={`ewrewrewr`}></ToolTip>
         </Wrapper>
       </Router>
     </div>
@@ -297,4 +151,3 @@ function App() {
 }
 
 export default App;
- 

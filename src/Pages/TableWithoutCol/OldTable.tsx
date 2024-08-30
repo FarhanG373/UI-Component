@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Table from "../components/Table_old/Table";
+import Table from "../../components/Table_old/Table";
 
 const useFeatchData = (url: string) => {
   const [data, setData] = useState<any>([]);

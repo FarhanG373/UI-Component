@@ -3,7 +3,7 @@ import './Select.scss';
 export interface Props {
   selectClass?: any;
   selectId?: any;
-  selectValue: any;
+  selectValue?: any;
   children?: any;
 }
 const Select = ({

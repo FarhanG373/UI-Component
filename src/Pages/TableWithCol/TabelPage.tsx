@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { TableColumn } from "./TableColumn";
-import Table from "../components/Table/Table";
+import Table from "../../components/Table/Table";
 const TabelPage = () => {
   const [rows, setRows] = useState<Array<any>>([]);
   const [loading, setLoading] = useState<boolean>(true);
