@@ -20,59 +20,66 @@ import AccordianPage from "./Pages/AccordianPage/AccordianPage";
 import PaginationPage from "./Pages/PaginationPage/PaginationPage";
 import ToolTipPage from "./Pages/ToolTipPage/ToolTipPage";
 import ButtonPage from "./Pages/ButtonPage/ButtonPage";
+import Dropdown from "./components/Dropdown/Dropdown";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <NavBar Logo={logo} navBarColor="dark">
-          <ul>
-            <li>
-              <Link to={`/`}>Home</Link>
-            </li>
-            <li>
-              <Link to={`/tableData`}>Table with Colum setting</Link>
-            </li>
-            <li>
-              <Link to={`/oldtableData`}>Table with same API</Link>
-            </li>
-            <li>
-              <Link to={`/banner`}>Banner</Link>
-            </li>
-            <li>
-              <Link to={`/ModalPage`}>Modal</Link>
-            </li>
-            <li>
-              <Link to={`/list`}>List</Link>
-            </li>
-            <li>
-              <Link to={`/Drop`}>DropDown</Link>
-            </li>
-            <li>
-              <Link to={`/combo`}>ComboBox</Link>
-            </li>
-            <li>
-              <Link to={`/form`}>form Element</Link>
-            </li>
-            <li>
-              <Link to={`/dd`}>Drag Drop</Link>
-            </li>
-            <li>
-              <Link to={`/tab`}>Tab</Link>
-            </li>
-            <li>
-              <Link to={`/accordian`}>Accordian</Link>
-            </li>
-            <li>
-              <Link to={`/pagination`}>Pagination</Link>
-            </li>
-            <li>
-              <Link to={`/tooltip`}>ToolTip</Link>
-            </li>
-            <li>
-              <Link to={`/button`}>Button</Link>
-            </li>
-          </ul>
+          <Dropdown
+            dropdownBtnName={`Open Component List`}
+            fieldClass={`customClass`}
+            mainClass={`mainClass`}
+          >
+            <ul>
+              <li>
+                <Link to={`/`}>Home</Link>
+              </li>
+              <li>
+                <Link to={`/tableData`}>Table with Colum setting</Link>
+              </li>
+              <li>
+                <Link to={`/oldtableData`}>Table with same API</Link>
+              </li>
+              <li>
+                <Link to={`/banner`}>Banner</Link>
+              </li>
+              <li>
+                <Link to={`/ModalPage`}>Modal</Link>
+              </li>
+              <li>
+                <Link to={`/list`}>List</Link>
+              </li>
+              <li>
+                <Link to={`/Drop`}>DropDown</Link>
+              </li>
+              <li>
+                <Link to={`/combo`}>ComboBox</Link>
+              </li>
+              <li>
+                <Link to={`/form`}>form Element</Link>
+              </li>
+              <li>
+                <Link to={`/dd`}>Drag Drop</Link>
+              </li>
+              <li>
+                <Link to={`/tab`}>Tab</Link>
+              </li>
+              <li>
+                <Link to={`/accordian`}>Accordian</Link>
+              </li>
+              <li>
+                <Link to={`/pagination`}>Pagination</Link>
+              </li>
+              <li>
+                <Link to={`/tooltip`}>ToolTip</Link>
+              </li>
+              <li>
+                <Link to={`/button`}>Button</Link>
+              </li>
+            </ul>
+          </Dropdown>
         </NavBar>
         <Routes>
           <Route path="/tableData" element={<TabelPage />} />
@@ -140,7 +147,6 @@ function App() {
                 cardBody="The list-style-type property applies to all lists, and to any element that is set to display: list-item.The color of the list marker will be whatever the computed color of the element is (set via the color property)."
                 CardImagePath="https://neilpatel.com/wp-content/uploads/2017/09/image-editing-tools.jpg"
                 CardImageAlt="im"
-                
               />
             </Flex>
           </FlexWrap>

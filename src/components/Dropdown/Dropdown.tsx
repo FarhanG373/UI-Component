@@ -9,6 +9,7 @@ export interface Props {
   fieldClick?: any;
   dropdownClass?: any;
   dropdownBtnName: any;
+  mainClass?: any;
 }
 
 const Dropdown = ({
@@ -19,6 +20,7 @@ const Dropdown = ({
   fieldBlur,
   dropdownClass,
   dropdownBtnName,
+  mainClass,
 }: Props) => {
   const [fClick, setFclick] = useState(false);
 
@@ -38,7 +40,7 @@ const Dropdown = ({
     }
   };
   return (
-    <div className="drop_down" ref={dropdownRef}>
+    <div className={`drop_down${mainClass? ' ' + mainClass :''}`} ref={dropdownRef}>
       <button
         className={`dropdownBtn${fieldClass ? " " + fieldClass : ""} ${
           fClick ? "dropOpen" : "dropClose"
