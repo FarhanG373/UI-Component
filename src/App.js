@@ -40,7 +40,7 @@ function App() {
                 <Link to={`/tableData`}>Table with Colum setting</Link>
               </li>
               <li>
-                <Link to={`/oldtableData`}>Table with same API</Link>
+                <Link to={`/oldtableData`}>Table without Colum setting</Link>
               </li>
               <li>
                 <Link to={`/banner`}>Banner</Link>
