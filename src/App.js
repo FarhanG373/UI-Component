@@ -21,6 +21,7 @@ import PaginationPage from "./Pages/PaginationPage/PaginationPage";
 import ToolTipPage from "./Pages/ToolTipPage/ToolTipPage";
 import ButtonPage from "./Pages/ButtonPage/ButtonPage";
 import Dropdown from "./components/Dropdown/Dropdown";
+import ImageSlider from "./Pages/ImageSlider/ImageSlider";
 
 function App() {
   return (
@@ -78,6 +79,9 @@ function App() {
               <li>
                 <Link to={`/button`}>Button</Link>
               </li>
+              <li>
+                <Link to={`/imageSlider`}>Image Slider</Link>
+              </li>
             </ul>
           </Dropdown>
         </NavBar>
@@ -96,6 +100,7 @@ function App() {
           <Route path="/pagination" element={<PaginationPage />} />
           <Route path="/tooltip" element={<ToolTipPage />} />
           <Route path="/button" element={<ButtonPage />} />
+          <Route path="/imageSlider" element={<ImageSlider />} />
         </Routes>
 
         <Wrapper wrapClass="fixWrap">
