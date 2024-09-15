@@ -22,8 +22,10 @@ import ToolTipPage from "./Pages/ToolTipPage/ToolTipPage";
 import ButtonPage from "./Pages/ButtonPage/ButtonPage";
 import Dropdown from "./components/Dropdown/Dropdown";
 import ImageSlider from "./Pages/ImageSlider/ImageSlider";
+import RangeSlide from "./Pages/RangeSlide/RangeSlide";
 
 function App() {
+
   return (
     <div className="App">
       <Router>
@@ -82,6 +84,9 @@ function App() {
               <li>
                 <Link to={`/imageSlider`}>Image Slider</Link>
               </li>
+              <li>
+                <Link to={`/rangeSlide`}>Range Slider</Link>
+              </li>
             </ul>
           </Dropdown>
         </NavBar>
@@ -101,6 +106,7 @@ function App() {
           <Route path="/tooltip" element={<ToolTipPage />} />
           <Route path="/button" element={<ButtonPage />} />
           <Route path="/imageSlider" element={<ImageSlider />} />
+          <Route path="/rangeSlide" element={<RangeSlide />} />
         </Routes>
 
         <Wrapper wrapClass="fixWrap">
@@ -154,8 +160,11 @@ function App() {
                 CardImageAlt="im"
               />
             </Flex>
+            
           </FlexWrap>
+          
         </Wrapper>
+        
       </Router>
     </div>
   );
