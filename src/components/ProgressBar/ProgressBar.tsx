@@ -174,7 +174,7 @@ const ProgressBar = ({
   progressType = "starit",
   progresForgroundColor,
   progresBackgroundColor,
-  radiusWidth,
+  radiusWidth = 75,
   circleBackgroundColor,
 }: Props) => {
   const style = {

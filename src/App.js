@@ -23,7 +23,7 @@ import ButtonPage from "./Pages/ButtonPage/ButtonPage";
 import Dropdown from "./components/Dropdown/Dropdown";
 import ImageSlider from "./Pages/ImageSlider/ImageSlider";
 import RangeSlide from "./Pages/RangeSlide/RangeSlide";
-import ProgressBar from "./components/ProgressBar/ProgressBar";
+import Progress from './Pages/Progress/Progress'
 
 function App() {
 
@@ -88,6 +88,9 @@ function App() {
               <li>
                 <Link to={`/rangeSlide`}>Range Slider</Link>
               </li>
+              <li>
+                <Link to={`/progress`}>Progress Bar</Link>
+              </li>
             </ul>
           </Dropdown>
         </NavBar>
@@ -108,6 +111,7 @@ function App() {
           <Route path="/button" element={<ButtonPage />} />
           <Route path="/imageSlider" element={<ImageSlider />} />
           <Route path="/rangeSlide" element={<RangeSlide />} />
+          <Route path="/progress" element={<Progress />} />
         </Routes>
 
         <Wrapper wrapClass="fixWrap">
@@ -163,7 +167,7 @@ function App() {
             </Flex>
             
           </FlexWrap>
-          <ProgressBar color="FireBrick" progress={85} />
+          
         </Wrapper>
         
       </Router>
