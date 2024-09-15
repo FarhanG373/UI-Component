@@ -23,6 +23,7 @@ import ButtonPage from "./Pages/ButtonPage/ButtonPage";
 import Dropdown from "./components/Dropdown/Dropdown";
 import ImageSlider from "./Pages/ImageSlider/ImageSlider";
 import RangeSlide from "./Pages/RangeSlide/RangeSlide";
+import ProgressBar from "./components/ProgressBar/ProgressBar";
 
 function App() {
 
@@ -162,7 +163,7 @@ function App() {
             </Flex>
             
           </FlexWrap>
-          
+          <ProgressBar color="FireBrick" progress={85} />
         </Wrapper>
         
       </Router>
