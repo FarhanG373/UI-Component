@@ -23,10 +23,11 @@ import ButtonPage from "./Pages/ButtonPage/ButtonPage";
 import Dropdown from "./components/Dropdown/Dropdown";
 import ImageSlider from "./Pages/ImageSlider/ImageSlider";
 import RangeSlide from "./Pages/RangeSlide/RangeSlide";
-import Progress from './Pages/Progress/Progress'
+import Progress from "./Pages/Progress/Progress";
+import Search from "./components/Search/Search";
+import { FaSearchengin } from "react-icons/fa6";
 
 function App() {
-
   return (
     <div className="App">
       <Router>
@@ -115,6 +116,11 @@ function App() {
         </Routes>
 
         <Wrapper wrapClass="fixWrap">
+          <Search
+            searchClick={() => alert("search")}
+            searchId={`id`}
+            searchLabelText="sss"
+          ></Search>
           <FlexWrap FlexWrap="wrap">
             <Flex
               FlexJustify="justify-right"
@@ -165,11 +171,8 @@ function App() {
                 CardImageAlt="im"
               />
             </Flex>
-            
           </FlexWrap>
-          
         </Wrapper>
-        
       </Router>
     </div>
   );
