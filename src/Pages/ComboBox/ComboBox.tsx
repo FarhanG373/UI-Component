@@ -1,7 +1,7 @@
 import React from 'react'
 import Select from '../../components/Select/Select';
 import SelectOptions from '../../components/Select/SelectOptions';
-
+import BreadCrumb from '../../components/Breadcrumb/BreadCrumb';
 const ComboBox = () => {
   const options = [
     { label99: "Fruit", value1: "fruit" },
@@ -10,6 +10,7 @@ const ComboBox = () => {
   ];
   return (
     <div>
+      <BreadCrumb />
       <Select>
                 {options.map((item) => {
                   return (

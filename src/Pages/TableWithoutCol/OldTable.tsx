@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Table from "../../components/Table_old/Table";
-
+import BreadCrumb from '../../components/Breadcrumb/BreadCrumb';
 const useFeatchData = (url: string) => {
   const [data, setData] = useState<any>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -43,7 +43,7 @@ const OldTable = () => {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
   if (data && data.length > 0) {
-    return <Table tableData={data} tableHeader={data}></Table>;
+    return <><BreadCrumb /><Table tableData={data} tableHeader={data}></Table></>;
   }
   return <div>No data available</div>;
 };

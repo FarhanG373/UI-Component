@@ -1,6 +1,6 @@
 import React from 'react'
 import Accordian from '../../components/Accordian/Accordian'
-
+import BreadCrumb from '../../components/Breadcrumb/BreadCrumb';
 const AccordianPage = () => {
   const accordionItems = [
     {
@@ -57,6 +57,7 @@ const AccordianPage = () => {
   ];
   return (
     <div>
+      <BreadCrumb/>
       <Accordian
             title={accordionItems.map(({ title1 }) => [title1])}
             content={accordionItems.map(({ content }) => [content])}

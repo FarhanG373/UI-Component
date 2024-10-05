@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { TableColumn } from "./TableColumn";
 import Table from "../../components/Table/Table";
+import BreadCrumb from '../../components/Breadcrumb/BreadCrumb';
 const TabelPage = () => {
   const [rows, setRows] = useState<Array<any>>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -21,7 +22,7 @@ const TabelPage = () => {
     alert(item);
   };
   if (loading) return <div>Loading...</div>;
-  return <Table cols={TableColumn(handleEdit)} data={rows} />;
+  return <><BreadCrumb /><Table cols={TableColumn(handleEdit)} data={rows} /></>;
 };
 
 export default TabelPage;

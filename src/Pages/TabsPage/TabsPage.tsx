@@ -1,6 +1,6 @@
 import React from "react";
 import TabMenu from "../../components/TabMenu/TabMenu";
-
+import BreadCrumb from '../../components/Breadcrumb/BreadCrumb';
 const TabsPage = () => {
   const data = [
     {
@@ -76,6 +76,7 @@ const TabsPage = () => {
   ];
   return (
     <div>
+      <BreadCrumb/>
       <TabMenu
         Label={data.map(({ company }) => [company])}
         Value={data.map(({ name }) => [name])}

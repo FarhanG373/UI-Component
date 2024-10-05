@@ -1,5 +1,6 @@
 import React from 'react'
 import ImageSliders from '../../components/ImageSlider/ImageSlider'
+import BreadCrumb from '../../components/Breadcrumb/BreadCrumb';
 const ImageSlider = () => {
   const colors = [
     {
@@ -32,13 +33,12 @@ const ImageSlider = () => {
     },
   ];
   return (
-    <ImageSliders
-    Images={colors.map((i) => i.image)}
-    sliderData={colors.map((i) => i.name)}
-    sliderNavigation
-    sliderDots
-    navigationCustomClass="naviclass"
-  />
+    <><BreadCrumb /><ImageSliders
+      Images={colors.map((i) => i.image)}
+      sliderData={colors.map((i) => i.name)}
+      sliderNavigation
+      sliderDots
+      navigationCustomClass="naviclass" /></>
   )
 }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import Pagination from '../../components/Pagination/Pagination'
+import BreadCrumb from '../../components/Breadcrumb/BreadCrumb';
 const data = [
   {
     id: 0,
@@ -75,6 +76,7 @@ const data = [
 const PaginationPage = () => {
   return (
     <div>
+      <BreadCrumb />
       <Pagination itemPerPageProp={2} totalPagesProp={data.length} />
     </div>
   )

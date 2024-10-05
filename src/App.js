@@ -25,7 +25,7 @@ import ImageSlider from "./Pages/ImageSlider/ImageSlider";
 import RangeSlide from "./Pages/RangeSlide/RangeSlide";
 import Progress from "./Pages/Progress/Progress";
 import Search from "./components/Search/Search";
-import { FaSearchengin } from "react-icons/fa6";
+import BreadCrumb from "./Pages/Breadcrumb/breadcrumb";
 
 function App() {
   return (
@@ -92,6 +92,9 @@ function App() {
               <li>
                 <Link to={`/progress`}>Progress Bar</Link>
               </li>
+              <li>
+                <Link to={`/breadcrumb`}>Breadcrumb</Link>
+              </li>
             </ul>
           </Dropdown>
         </NavBar>
@@ -113,13 +116,14 @@ function App() {
           <Route path="/imageSlider" element={<ImageSlider />} />
           <Route path="/rangeSlide" element={<RangeSlide />} />
           <Route path="/progress" element={<Progress />} />
+          <Route path="/breadcrumb" element={<BreadCrumb />} />
         </Routes>
 
         <Wrapper wrapClass="fixWrap">
           <Search
             searchClick={() => alert("search")}
             searchId={`id`}
-            searchLabelText="sss"
+            searchLabelText="Search"
           ></Search>
           <FlexWrap FlexWrap="wrap">
             <Flex
