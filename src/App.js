@@ -26,6 +26,7 @@ import RangeSlide from "./Pages/RangeSlide/RangeSlide";
 import Progress from "./Pages/Progress/Progress";
 import Search from "./components/Search/Search";
 import BreadCrumb from "./Pages/Breadcrumb/breadcrumb";
+import DatePicker from "./Pages/DatePicker/DatePicker";
 
 function App() {
   return (
@@ -95,6 +96,9 @@ function App() {
               <li>
                 <Link to={`/breadcrumb`}>Breadcrumb</Link>
               </li>
+              <li>
+                <Link to={`/datePicker`}>Datepicker</Link>
+              </li>
             </ul>
           </Dropdown>
         </NavBar>
@@ -117,9 +121,11 @@ function App() {
           <Route path="/rangeSlide" element={<RangeSlide />} />
           <Route path="/progress" element={<Progress />} />
           <Route path="/breadcrumb" element={<BreadCrumb />} />
+          <Route path="/datePicker" element={<DatePicker/>} />
         </Routes>
 
         <Wrapper wrapClass="fixWrap">
+          
           <Search
             searchClick={() => alert("search")}
             searchId={`id`}
