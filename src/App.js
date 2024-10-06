@@ -43,61 +43,62 @@ function App() {
                 <Link to={`/`}>Home</Link>
               </li>
               <li>
-                <Link to={`/tableData`}>Table with Colum setting</Link>
-              </li>
-              <li>
-                <Link to={`/oldtableData`}>Table without Colum setting</Link>
+                <Link to={`/accordian`}>Accordian</Link>
               </li>
               <li>
                 <Link to={`/banner`}>Banner</Link>
               </li>
               <li>
-                <Link to={`/ModalPage`}>Modal</Link>
-              </li>
-              <li>
-                <Link to={`/list`}>List</Link>
-              </li>
-              <li>
-                <Link to={`/Drop`}>DropDown</Link>
-              </li>
-              <li>
-                <Link to={`/combo`}>ComboBox</Link>
-              </li>
-              <li>
-                <Link to={`/form`}>form Element</Link>
-              </li>
-              <li>
-                <Link to={`/dd`}>Drag Drop</Link>
-              </li>
-              <li>
-                <Link to={`/tab`}>Tab</Link>
-              </li>
-              <li>
-                <Link to={`/accordian`}>Accordian</Link>
-              </li>
-              <li>
-                <Link to={`/pagination`}>Pagination</Link>
-              </li>
-              <li>
-                <Link to={`/tooltip`}>ToolTip</Link>
+                <Link to={`/breadcrumb`}>Breadcrumb</Link>
               </li>
               <li>
                 <Link to={`/button`}>Button</Link>
               </li>
               <li>
+                <Link to={`/combo`}>ComboBox</Link>
+              </li>
+              <li>
+                <Link to={`/datePicker`}>Datepicker</Link>
+              </li>
+              <li>
+                <Link to={`/dd`}>Drag Drop</Link>
+              </li>
+              <li>
+                <Link to={`/Drop`}>DropDown</Link>
+              </li>
+              <li>
+                <Link to={`/form`}>form Element</Link>
+              </li>
+              <li>
                 <Link to={`/imageSlider`}>Image Slider</Link>
               </li>
               <li>
-                <Link to={`/rangeSlide`}>Range Slider</Link>
+                <Link to={`/list`}>List</Link>
+              </li>
+              <li>
+                <Link to={`/ModalPage`}>Modal</Link>
               </li>
               <li>
                 <Link to={`/progress`}>Progress Bar</Link>
               </li>
               <li>
-                <Link to={`/breadcrumb`}>Breadcrumb</Link>
+                <Link to={`/pagination`}>Pagination</Link>
               </li>
               <li>
-                <Link to={`/datePicker`}>Datepicker</Link>
+                <Link to={`/rangeSlide`}>Range Slider</Link>
+              </li>
+              <li>
+                <Link to={`/tab`}>Tab</Link>
+              </li>
+              <li>
+                <Link to={`/tableData`}>Table with Colum setting</Link>
+              </li>
+              <li>
+                <Link to={`/oldtableData`}>Table without Colum setting</Link>
+              </li>
+
+              <li>
+                <Link to={`/tooltip`}>ToolTip</Link>
               </li>
             </ul>
           </Dropdown>
@@ -121,11 +122,10 @@ function App() {
           <Route path="/rangeSlide" element={<RangeSlide />} />
           <Route path="/progress" element={<Progress />} />
           <Route path="/breadcrumb" element={<BreadCrumb />} />
-          <Route path="/datePicker" element={<DatePicker/>} />
+          <Route path="/datePicker" element={<DatePicker />} />
         </Routes>
 
         <Wrapper wrapClass="fixWrap">
-          
           <Search
             searchClick={() => alert("search")}
             searchId={`id`}
